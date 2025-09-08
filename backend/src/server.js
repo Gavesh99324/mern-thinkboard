@@ -19,8 +19,6 @@ app.use((req, res, next) => {
   next();
 });
 
-//
-
 app.use("/api/notes", notesRoutes);
 connectDB().then(() => {
   app.listen(PORT, () => {
