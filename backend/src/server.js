@@ -16,8 +16,8 @@ app.use(
     origin: "http://localhost:5173",
   })
 );
-app.use(express.json()); //this middleware is used to parse JSON bodies
-app.use(rateLimiter);
+app.use(express.json()); //this middleware is used to parse JSON bodies. To access to req.body
+app.use(rateLimiter); // this middleware is used to limit the number of requests from a single IP address
 
 // simple custom middleware
 app.use((req, res, next) => {
@@ -25,9 +25,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/notes", notesRoutes);
+app.use("/api/notes", notesRoutes); // This is a route middleware
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log("Server is running on port", PORT, "🏆");
   });
 });
+
+ 
+// server.js > notesRoutes.js(routes files) > notesController.js(controller files/functions) > db.js > Note.js(models/schema)
+
