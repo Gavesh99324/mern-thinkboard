@@ -65,4 +65,3 @@ export async function deleteNote(req, res) {
   }
 }
 
-// mongodb+srv://gtj99324_db_user:3gANLj8QpwLPRwCN@cluster0.1qwgsnw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
