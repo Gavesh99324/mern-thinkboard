@@ -41,7 +41,7 @@ export async function updateNote(req, res) {
       req.params.id,
       { title, content },
       {
-        new: true, // this option returns the modified document rather than the original
+        new: true,
       }
     );
     if (!updatedNote)
